@@ -155,7 +155,6 @@ class LSTMAutoencoder:
 
         save_model(self._autoencoder, uri+"_lstm_autoencoder.hdf5")
         save_model(self._encoder, uri+"_lstm_encoder.hdf5")
-        save_model(self._decoder, uri+"_lstm_decoder.hdf5")
 
     def load(self, uri):
         """
@@ -165,7 +164,6 @@ class LSTMAutoencoder:
         :param uri: base filename
         """
         self._encoder = load_model(uri+"_lstm_encoder.hdf5")
-        self._decoder = load_model(uri+"_lstm_decoder.hdf5")
         self._autoencoder = load_model(uri+"_lstm_autoencoder.hdf5")
 
         pf = PyFolder(os.path.dirname(os.path.realpath(uri)))
